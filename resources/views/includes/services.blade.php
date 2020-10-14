@@ -10,7 +10,7 @@
                         <div class="feature-box-sm radius bg-white">
                             <i class="fa fa-bank text-primary"></i>
                         </div>
-                        <h4><a href="#">Best Industry Leaders</a></h4>
+                        <h4><a href="#">Registered Courses</a></h4>
                         <a href="#" class="btn radius-xl">View More</a>
                     </div>
                 </div>
@@ -38,8 +38,8 @@
                         <div class="feature-box-sm radius bg-white">
                             <i class="fa fa-file-text-o text-primary"></i>
                         </div>
-                        <h4><a href="#">Book Library & Store</a></h4>
-                        <a href="#" class="btn radius-xl">View More</a>
+                        <h4><a href="{{route('booklet')}}">Book Library & Store</a></h4>
+                        <a href="{{route('booklet')}}" class="btn radius-xl">View More</a>
                     </div>
                 </div>
             </div>

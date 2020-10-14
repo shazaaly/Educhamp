@@ -6,22 +6,22 @@
     <!-- META ============================================= -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
-    <meta name="robots" content="" />
+    <meta name="keywords" content=""/>
+    <meta name="author" content=""/>
+    <meta name="robots" content=""/>
 
     <!-- DESCRIPTION -->
-    <meta name="description" content="EduChamp : Education HTML Template" />
+    <meta name="description" content="EduChamp : Education HTML Template"/>
 
     <!-- OG -->
-    <meta property="og:title" content="EduChamp : Education HTML Template" />
-    <meta property="og:description" content="EduChamp : Education HTML Template" />
-    <meta property="og:image" content="" />
+    <meta property="og:title" content="EduChamp : Education HTML Template"/>
+    <meta property="og:description" content="EduChamp : Education HTML Template"/>
+    <meta property="og:image" content=""/>
     <meta name="format-detection" content="telephone=no">
 
     <!-- FAVICONS ICON ============================================= -->
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
+    <link rel="icon" href="../../../public/assets/images/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../public/assets/images/favicon.png"/>
 
     <!-- PAGE TITLE HERE ============================================= -->
     <title>EduChamp : Education HTML Template </title>
@@ -30,22 +30,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--[if lt IE 9]>
-    <script src="assets/js/html5shiv.min.js"></script>
-    <script src="assets/js/respond.min.js"></script>
+    <script src="../../../public/assets/js/html5shiv.min.js"></script>
+    <script src="../../../public/assets/js/respond.min.js"></script>
     <![endif]-->
 
     <!-- All PLUGINS CSS ============================================= -->
-    <link rel="stylesheet" type="text/css" href="assets/css/assets.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/assets.css')}}">
 
     <!-- TYPOGRAPHY ============================================= -->
-    <link rel="stylesheet" type="text/css" href="assets/css/typography.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/typography.css')}}">
 
     <!-- SHORTCODES ============================================= -->
-    <link rel="stylesheet" type="text/css" href="assets/css/shortcodes/shortcodes.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/shortcodes/shortcodes.css')}}">
 
     <!-- STYLESHEETS ============================================= -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link class="skin" rel="stylesheet" type="text/css" href="assets/css/color/color-1.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
+    <link class="skin" rel="stylesheet" type="text/css" href="{{asset('assets/css/color/color-1.css')}}">
+
 
 </head>
 <body id="bg">
@@ -71,7 +72,7 @@
                                 </select>
                             </li>
                             <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Register</a></li>
+                            <li><a href="{{route('register')}}">Register</a></li>
                         </ul>
                     </div>
                 </div>
@@ -173,7 +174,7 @@
                             </li>
                             <li><a href="javascript:;">Blog <i class="fa fa-chevron-down"></i></a>
                                 <ul class="sub-menu">
-                                    <li><a href="blog-classic-grid.html">Blog Classic</a></li>
+                                    <li><a href="blog-classic-grid.html">Book Store</a></li>
                                     <li><a href="blog-classic-sidebar.html">Blog Classic Sidebar</a></li>
                                     <li><a href="blog-list-sidebar.html">Blog List Sidebar</a></li>
                                     <li><a href="blog-standard-sidebar.html">Blog Standard Sidebar</a></li>
@@ -223,7 +224,7 @@
         <div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner1.jpg);">
             <div class="container">
                 <div class="page-banner-entry">
-                    <h1 class="text-white">Classroom</h1>
+                    <h1 class="text-white">Book Store</h1>
                 </div>
             </div>
         </div>
@@ -231,7 +232,7 @@
             <div class="container">
                 <ul class="list-inline">
                     <li><a href="#">Home</a></li>
-                    <li>Classroom</li>
+                    <li>Book Store</li>
                 </ul>
             </div>
         </div>
@@ -241,24 +242,44 @@
             <!-- Blog Grid ==== -->
             <div class="section-area section-sp1">
                 <div class="container">
+                    <div class="ttr-blog-grid-3 row" id="masonry">
+                        @foreach($booklets as $booklet)
+                        <div class="post action-card col-lg-4 col-md-6 col-sm-12 col-xs-12 m-b40">
+                            <div class="recent-news">
+                                <div class="action-box">
+                                    <img src="{{ Voyager::image( $booklet->image ) }}" alt="">
+                                </div>
+                                <div class="info-bx">
+                                    <ul class="media-post">
+                                        <li><a href="#"><i class="fa fa-calendar"></i>{{$booklet->created_at}}</a></li>
+                                        <li><a href="#"><i class="fa fa-user"></i>By William</a></li>
+                                    </ul>
+                                    <h5 class="post-title"><a href="blog-details.html">
+                                        {{$booklet->title}}.</a></h5>
+                                    <p>{{$booklet->short_description}}</p>
+                                    <div class="post-extra">
+                                        <a href="#" class="btn-link">Free</a>
+                                        <hr>
+                                        <a download="paypal.pdf" href="{{ Storage::url('booklets/paypal.pdf') }}" title="paypal.pdf">Download</a>
 
-                    @foreach ($videos as $video)
-                        <video style="width:80%" controls>
-                            <source src="{{ asset("storage/$video->path") }}" type="video/mp4">
+                                        <a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>20 Comment</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
 
-                        </video>
-                @endforeach
-{{--                    here is empty area--}}
+                    </div>
                     <!-- Pagination ==== -->
-{{--                    <div class="pagination-bx rounded-sm gray clearfix">--}}
-{{--                        <ul class="pagination">--}}
-{{--                            <li class="previous"><a href="#"><i class="ti-arrow-left"></i> Prev</a></li>--}}
-{{--                            <li class="active"><a href="#">1</a></li>--}}
-{{--                            <li><a href="#">2</a></li>--}}
-{{--                            <li><a href="#">3</a></li>--}}
-{{--                            <li class="next"><a href="#">Next <i class="ti-arrow-right"></i></a></li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
+                    <div class="pagination-bx rounded-sm gray clearfix">
+                        <ul class="pagination">
+                            <li class="previous"><a href="#"><i class="ti-arrow-left"></i> Prev</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li class="next"><a href="#">Next <i class="ti-arrow-right"></i></a></li>
+                        </ul>
+                    </div>
                     <!-- Pagination END ==== -->
                 </div>
             </div>
@@ -376,21 +397,8 @@
     <button class="back-to-top fa fa-chevron-up"></button>
 </div>
 <!-- External JavaScripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/vendors/bootstrap/js/popper.min.js"></script>
-<script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-<script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
-<script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
-<script src="assets/vendors/counter/waypoints-min.js"></script>
-<script src="assets/vendors/counter/counterup.min.js"></script>
-<script src="assets/vendors/imagesloaded/imagesloaded.js"></script>
-<script src="assets/vendors/masonry/masonry.js"></script>
-<script src="assets/vendors/masonry/filter.js"></script>
-<script src="assets/vendors/owl-carousel/owl.carousel.js"></script>
-<script src="assets/js/functions.js"></script>
-<script src="assets/js/contact.js"></script>
-<script src='assets/vendors/switcher/switcher.js'></script>
+@include('includes.jsExternal')
+@include('includes.jq')
 </body>
 
 </html>

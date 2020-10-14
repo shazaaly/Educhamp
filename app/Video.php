@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Student extends Model
+class Video extends Model
 {
-    protected $guarded=[];
+    
 }

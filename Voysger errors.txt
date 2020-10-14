@@ -1,0 +1,2 @@
+belongsTo
+add column to table foreign key course_id   not id
