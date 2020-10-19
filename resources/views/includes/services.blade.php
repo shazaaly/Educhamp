@@ -11,7 +11,7 @@
                             <i class="fa fa-bank text-primary"></i>
                         </div>
                         <h4><a href="#">Registered Courses</a></h4>
-                        <a href="#" class="btn radius-xl">View More</a>
+                        <a href="{{route('videos')}}" class="btn radius-xl">View More</a>
                     </div>
                 </div>
             </div>
@@ -24,8 +24,8 @@
                         <div class="feature-box-sm radius bg-white">
                             <i class="fa fa-book text-primary"></i>
                         </div>
-                        <h4><a href="#">Learn Courses Online</a></h4>
-                        <a href="#" class="btn radius-xl">View More</a>
+                        <h4><a href="{{route('jitsi')}}">Learn Courses Online</a></h4>
+                        <a href="{{route('jitsi')}}" class="btn radius-xl">View More</a>
                     </div>
                 </div>
             </div>

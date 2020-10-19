@@ -439,7 +439,7 @@
 									<ul>
 										<li><a href="courses.html">Courses</a></li>
 										<li><a href="courses-details.html">Details</a></li>
-										<li><a href="membership.html">Membership</a></li>
+										<li><a href="{{route('membership')}}">Membership</a></li>
 										<li><a href="profile.html">Profile</a></li>
 									</ul>
 								</div>

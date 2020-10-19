@@ -22,7 +22,6 @@ class CourseController extends Controller
     {
         try {
             $course = Course::find($id);
-
             $teacher = $course->teachers->first();
             $teachersAll=$course->teachers->all();
             $stage_name = $course->stage->stage_name;

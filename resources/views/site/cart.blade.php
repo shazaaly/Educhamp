@@ -52,6 +52,7 @@
 <body id="bg">
 <div class="page-wraper">
     <div id="loading-icon-bx"></div>
+
     <!-- Header Top ==== -->
     <header class="header rs-nav">
         <div class="top-bar">
@@ -72,7 +73,7 @@
                                 </select>
                             </li>
                             <li><a href="login.html">Login</a></li>
-                            <li><a href="{{route('register')}}">Register</a></li>
+                            <li><a href="register.html">Register</a></li>
                         </ul>
                     </div>
                 </div>
@@ -86,9 +87,7 @@
                         <a href="index.html"><img src="assets/images/logo.png" alt=""></a>
                     </div>
                     <!-- Mobile Nav Button ==== -->
-                    <button class="navbar-toggler collapsed menuicon justify-content-end" type="button"
-                            data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -101,10 +100,7 @@
                                 <li><a href="javascript:;" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
                                 <li><a href="javascript:;" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
                                 <!-- Search Button ==== -->
-                                <li class="search-btn">
-                                    <button id="quik-search-btn" type="button" class="btn-link"><i
-                                            class="fa fa-search"></i></button>
-                                </li>
+                                <li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
                             </ul>
                         </div>
                     </div>
@@ -160,8 +156,7 @@
                                     <li><a href="error-404.html">404 Page</a></li>
                                 </ul>
                             </li>
-                            <li class="add-mega-menu"><a href="javascript:;">Our Courses <i
-                                        class="fa fa-chevron-down"></i></a>
+                            <li class="add-mega-menu"><a href="javascript:;">Our Courses <i class="fa fa-chevron-down"></i></a>
                                 <ul class="sub-menu add-menu">
                                     <li class="add-menu-left">
                                         <h5 class="menu-adv-title">Our Courses</h5>
@@ -180,15 +175,14 @@
                             </li>
                             <li><a href="javascript:;">Blog <i class="fa fa-chevron-down"></i></a>
                                 <ul class="sub-menu">
-                                    <li><a href="blog-classic-grid.html">Book Store</a></li>
+                                    <li><a href="blog-classic-grid.html">Blog Classic</a></li>
                                     <li><a href="blog-classic-sidebar.html">Blog Classic Sidebar</a></li>
                                     <li><a href="blog-list-sidebar.html">Blog List Sidebar</a></li>
                                     <li><a href="blog-standard-sidebar.html">Blog Standard Sidebar</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                    <li><a href="blog-details.html">Cart</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-dashboard"><a href="javascript:;">Dashboard <i
-                                        class="fa fa-chevron-down"></i></a>
+                            <li class="nav-dashboard"><a href="javascript:;">Dashboard <i class="fa fa-chevron-down"></i></a>
                                 <ul class="sub-menu">
                                     <li><a href="admin/index.html">Dashboard</a></li>
                                     <li><a href="admin/add-listing.html">Add Listing</a></li>
@@ -224,106 +218,89 @@
             </div>
         </div>
     </header>
-    <!-- header END -->
-    <!-- Inner Content Box ==== -->
+    <!-- header END ==== -->
+    <!-- Content -->
     <div class="page-content bg-white">
-        <!-- Page Heading Box ==== -->
-        <div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner1.jpg);">
+        <!-- inner page banner -->
+        <div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner2.jpg);">
             <div class="container">
                 <div class="page-banner-entry">
-                    <h1 class="text-white">Book Store</h1>
+                    <h1 class="text-white">My Cart</h1>
                 </div>
             </div>
         </div>
+        <!-- Breadcrumb row -->
         <div class="breadcrumb-row">
             <div class="container">
                 <ul class="list-inline">
-                    <li><a href="{{route('home')}}">Home</a></li>
-                    <li>Book Store</li>
+                    <li><a href="#">Home</a></li>
+                    <li>My Cart</li>
                 </ul>
             </div>
         </div>
-        <!-- Page Heading Box END ==== -->
-        <!-- Page Content Box ==== -->
+        <!-- Breadcrumb row END -->
         <div class="content-block">
-            <!-- Blog Grid ==== -->
             <div class="section-area section-sp1">
                 <div class="container">
-                    <div class="ttr-blog-grid-3 row" id="masonry">
+                    <div class="row">
+                        <!-- Left part start -->
+                        <div class="col-lg-6 col-xl-6">
+                            <!-- blog start -->
+                            <div class="recent-news blog-lg">
+                                <div class="action-box blog-lg">
+{{--                                    <img src="{{ Voyager::image( $booklet->image ) }}" alt="" >--}}
+                                </div>
+                                <div class="info-bx">
+                                    <ul class="media-post">
+                                        <li><a href="#"><i class="fa fa-calendar"></i>May 14 2019</a></li>
+                                        <li><a href="#"><i class="fa fa-comments-o"></i>10 Comment</a></li>
+                                    </ul>
+                                    <h5 class="post-title"><a href="#">Why every startup should adopt Amazon’s Hot Air.</a></h5>
+                                    <p>David Ogilvy, the advertising legend once said that, On average, five times as many people read the headline as read the body copy. When you have written your headline, you have spent eighty cents out of your dollar." As Ogilvy points out, your headline is the first (and sometimes the only) thing that your audience will read.</p>
+                                    <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
+                                    <div class="widget_tag_cloud">
 
-                    @foreach($booklets as $booklet)
-
-                            <div class="post action-card col-lg-4 col-md-6 col-sm-12 col-xs-12 m-b40">
-                                <div class="recent-news">
-                                    <div class="action-box">
-                                        <img src="{{ Voyager::image( $booklet->image ) }}" alt="">
                                     </div>
-                                    <div class="info-bx">
-                                        <ul class="media-post">
-                                            <li><a href="#"><i class="fa fa-calendar"></i>{{$booklet->created_at}}
-                                                </a></li>
-                                            <li><a href="#"><i class="fa fa-user"></i>By William</a></li>
-                                        </ul>
-                                        <h5 class="post-title"><a href="blog-details.html">
-                                                {{$booklet->name}}.</a></h5>
-                                        <p>{{$booklet->short_description}}</p>
-                                        @if($booklet->free ==1 )
-
-                                        <div class="post-extra">
-                                            <a href="#" class="btn-link">Free</a>
-                                            <hr>
-                                                <a download="paypal.pdf"
-                                                   href="{{ Storage::url('booklets/paypal.pdf') }}" title="paypal.pdf">Download</a>
-                                            <a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>20
-                                                Comment</a>
-                                        </div>
-
-                                        @else
-                                            <div class="post-extra">
-
-                                                <form action="{{route('booklet', $booklet->id)}}" method="post">
-                                                    @csrf
-                                                    <input type="hidden" name="id" value="{{$booklet->id}}">
-                                                    <input type="hidden" name="name" value="{{$booklet->name}}">
-                                                    <input type="hidden" name="price" value="{{$booklet->price}}">
-                                                    <input type="hidden" name="quantity" value="{{$booklet->quantity}}">
-                                                    <input type="submit" class="btn-link" value="Add To Cart">
-                                                </form>
-                                                @if (session()->has('success'))
-                                                    <div class="col-lg-12 m-b30">"
-                                                        <a href="{{route('paypal')}}" value="Submit" class="btn button-sm"> {{ session()->get('success') }}</a>
-
-                                                @endif
-                                                <hr>
-
-                                            </div>
-
-                                            @endif
-                                    </div>
+                                    <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
+                                    <h6>SHARE </h6>
+                                    <ul class="list-inline contact-social-bx">
+                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                    <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
                                 </div>
                             </div>
+                            <!-- blog END -->
+                        </div>
+                        <!-- Left part END -->
+                        <!-- Side bar start -->
+                        <div class="col-lg-6 col-xl-6">
+                            <aside  class="side-bar sticky-top">
 
-                        @endforeach
+                                <div class="widget recent-posts-entry">
+                                    <h6 class="widget-title">{{$cartItem->name}}</h6>
+                                    <form action="{{route('cart.store', $cartItem->id)}}"  method="post" class="contact-bx">
+                                        @csrf
+                                        <input  name="id" type="hidden" value="{{$cartItem->id}}">
+                                        <input  name="title" type="text" value="{{$cartItem->name}}">
+                                        <input  name="price" type="number" value="{{$cartItem->price}}">
+                                        <input type="submit" class="btn-link" value="Chek Out">
 
+                                    </form>
+
+                                </div>
+
+                            </aside>
+                        </div>
+                        <!-- Side bar END -->
                     </div>
-                    <!-- Pagination ==== -->
-                    <div class="pagination-bx rounded-sm gray clearfix">
-                        <ul class="pagination">
-                            <li class="previous"><a href="#"><i class="ti-arrow-left"></i> Prev</a></li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li class="next"><a href="#">Next <i class="ti-arrow-right"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- Pagination END ==== -->
                 </div>
             </div>
-            <!-- Blog Grid END ==== -->
         </div>
-        <!-- Page Content Box END ==== -->
     </div>
-    <!-- Page Content Box END ==== -->
+    <!-- Content END-->
     <!-- Footer ==== -->
     <footer>
         <div class="footer-top">
@@ -331,7 +308,7 @@
                 <div class="container">
                     <div class="d-flex align-items-stretch">
                         <div class="pt-logo mr-auto">
-                            <a href="index.html"><img src="assets/images/logo-white.png" alt=""/></a>
+                            <a href="index.html"><img src="asset{{'assets/images/logo-white.png'}}" alt=""/></a>
                         </div>
                         <div class="pt-social-link">
                             <ul class="list-inline m-a0">
@@ -352,19 +329,14 @@
                     <div class="col-lg-4 col-md-12 col-sm-12 footer-col-4">
                         <div class="widget">
                             <h5 class="footer-title">Sign Up For A Newsletter</h5>
-                            <p class="text-capitalize m-b20">Weekly Breaking news analysis and cutting edge advices on
-                                job searching.</p>
+                            <p class="text-capitalize m-b20">Weekly Breaking news analysis and cutting edge advices on job searching.</p>
                             <div class="subscribe-form m-b20">
-                                <form class="subscription-form"
-                                      action="http://educhamp.themetrades.com/demo/assets/script/mailchamp.php"
-                                      method="post">
+                                <form class="subscription-form" action="http://educhamp.themetrades.com/demo/assets/script/mailchamp.php" method="post">
                                     <div class="ajax-message"></div>
                                     <div class="input-group">
-                                        <input name="email" required="required" class="form-control"
-                                               placeholder="Your Email Address" type="email">
+                                        <input name="email" required="required"  class="form-control" placeholder="Your Email Address" type="email">
                                         <span class="input-group-btn">
-											<button name="submit" value="Submit" type="submit" class="btn"><i
-                                                    class="fa fa-arrow-right"></i></button>
+											<button name="submit" value="Submit" type="submit" class="btn"><i class="fa fa-arrow-right"></i></button>
 										</span>
                                     </div>
                                 </form>
@@ -388,8 +360,7 @@
                                 <div class="widget footer_widget">
                                     <h5 class="footer-title">Get In Touch</h5>
                                     <ul>
-                                        <li><a href="http://educhamp.themetrades.com/admin/index.html">Dashboard</a>
-                                        </li>
+                                        <li><a href="http://educhamp.themetrades.com/admin/index.html">Dashboard</a></li>
                                         <li><a href="blog-classic-grid.html">Blog</a></li>
                                         <li><a href="portfolio.html">Portfolio</a></li>
                                         <li><a href="event.html">Event</a></li>
@@ -413,22 +384,14 @@
                         <div class="widget widget_gallery gallery-grid-4">
                             <h5 class="footer-title">Our Gallery</h5>
                             <ul class="magnific-image">
-                                <li><a href="assets/images/gallery/pic1.jpg" class="magnific-anchor"><img
-                                            src="assets/images/gallery/pic1.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic2.jpg" class="magnific-anchor"><img
-                                            src="assets/images/gallery/pic2.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic3.jpg" class="magnific-anchor"><img
-                                            src="assets/images/gallery/pic3.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic4.jpg" class="magnific-anchor"><img
-                                            src="assets/images/gallery/pic4.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic5.jpg" class="magnific-anchor"><img
-                                            src="assets/images/gallery/pic5.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic6.jpg" class="magnific-anchor"><img
-                                            src="assets/images/gallery/pic6.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic7.jpg" class="magnific-anchor"><img
-                                            src="assets/images/gallery/pic7.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic8.jpg" class="magnific-anchor"><img
-                                            src="assets/images/gallery/pic8.jpg" alt=""></a></li>
+                                <li><a href="{{asset('assets/images/gallery/pic1.jpg')}}" class="magnific-anchor"><img src="assets/images/gallery/pic1.jpg" alt=""></a></li>
+                                <li><a href="{{asset('assets/images/gallery/pic2.jpg')}}" class="magnific-anchor"><img src="assets/images/gallery/pic2.jpg" alt=""></a></li>
+                                <li><a href="{{asset('assets/images/gallery/pic3.jpg')}}" class="magnific-anchor"><img src="assets/images/gallery/pic3.jpg" alt=""></a></li>
+                                <li><a href="{{asset('assets/images/gallery/pic4.jpg')}}" class="magnific-anchor"><img src="assets/images/gallery/pic4.jpg" alt=""></a></li>
+                                <li><a href="{{asset('assets/images/gallery/pic5.jpg')}}" class="magnific-anchor"><img src="assets/images/gallery/pic5.jpg" alt=""></a></li>
+                                <li><a href="{{asset('assets/images/gallery/pic6.jpg')}}" class="magnific-anchor"><img src="assets/images/gallery/pic6.jpg" alt=""></a></li>
+                                <li><a href="{{asset('assets/images/gallery/pic7.jpg')}}" class="magnific-anchor"><img src="assets/images/gallery/pic7.jpg" alt=""></a></li>
+                                <li><a href="{{asset('assets/images/gallery/pic8.jpg')}}" class="magnific-anchor"><img src="assets/images/gallery/pic8.jpg" alt=""></a></li>
                             </ul>
                         </div>
                     </div>
@@ -438,15 +401,14 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 text-center"><a target="_blank"
-                                                                              href="https://www.templateshub.net">Templates
-                            Hub</a></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 text-center"> <a target="_blank" href="https://www.templateshub.net">Templates Hub</a></div>
                 </div>
             </div>
         </div>
     </footer>
     <!-- Footer END ==== -->
-    <button class="back-to-top fa fa-chevron-up"></button>
+    <!-- scroll top button -->
+    <button class="back-to-top fa fa-chevron-up" ></button>
 </div>
 <!-- External JavaScripts -->
 @include('includes.jsExternal')

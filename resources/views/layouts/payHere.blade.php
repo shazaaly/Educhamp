@@ -43,13 +43,15 @@
     <div id="loading-icon-bx"></div>
     <div class="account-form">
         <div class="account-head" style="background-image:url(assets/images/background/bg2.jpg);">
-            <a href="index.html"><img src="assets/images/logo-white-2.png" alt=""></a>
+            <a href="index.html"><img src="{{asset('assets/images/logo-white-2.png')}}" alt=""></a>
         </div>
         <div class="account-form-inner">
             <div class="account-container">
                 <div class="heading-bx left">
-                    <h2 class="title-head">Get It <span>Now</span></h2>
-                    <p> Your Paypal </p>
+                    <p> Your Paypal   </p>
+{{--                    <p> You Are Buying : {{$cartItem->name}}</p>--}}
+{{--                    <p> Qty:{{$cartItem->quantity}}</p>--}}
+{{--                    <p>Price: ${{$cartItem->price}}</p>--}}
                 </div>
                 <div id="paypal-button-container"></div>
                 <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>

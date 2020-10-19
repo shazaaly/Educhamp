@@ -23,11 +23,11 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('index', function (){
+Route::get('index', function () {
     return view('layouts.index');
 });
 
-Route::get('chat', function (){
+Route::get('chat', function () {
     return view('video');
 });
 
@@ -45,33 +45,48 @@ Route::get('register', 'StudentLoginController@register')->name('signUp');
 Route::post('register', 'StudentLoginController@store')->name('register');
 //end sign up route for site//
 
-
 // Start courses routes//
 Route::get('/home', 'CourseController@courses')->name('home');
 Route::get('course-details/{id}', 'CourseController@show')->name('course_details');
+Route::get('course', 'CourseController@courses')->name('courses');
+
 //End courses routes//
 
 //Booklets//
 Route::get('booklet', 'BookletController@getBooklets')->name('booklet');
 //Booklets//
 
+Route::get('videos', 'VideosController@index')->name('videos');
+Route::get('video/{id}', 'VideosController@getVideo')->name('videoDetail');
+Route::get('details/{id}', 'VideosController@show')->name('videos.show');
 
+
+//routes jitsi//
+
+Route::get('online-lecture', function () {
+    return view('jitsi');
+})->name('jitsi');
 
 //test
-Route::get('book-store', function (){
+Route::get('book-store', function () {
     return view('site.bookStore');
 });
-Route::get('test', function (){
+Route::get('test', function () {
     return view('site.test');
 });
+Route::get('booklet/pay', function () {
+    return view('layouts.payHere');
+})->name('pay');
 
-
+//Route::get('cart', function (){
+//    return view('site.cart');
+//});
 
 
 //test
 
-Route::get('teachers', function (){
-    return   $teacher = Teacher::with('courses')->get();
+Route::get('teachers', function () {
+    return $teacher = Teacher::with('courses')->get();
 
 });
 

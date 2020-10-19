@@ -6,28 +6,29 @@
     <!-- META ============================================= -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
-    <meta name="robots" content="" />
+    <meta name="keywords" content=""/>
+    <meta name="author" content=""/>
+    <meta name="robots" content=""/>
 
     <!-- DESCRIPTION -->
-    <meta name="description" content="EduChamp : Education HTML Template" />
+    <meta name="description" content="EduChamp : Education HTML Template"/>
 
     <!-- OG -->
-    <meta property="og:title" content="EduChamp : Education HTML Template" />
-    <meta property="og:description" content="EduChamp : Education HTML Template" />
-    <meta property="og:image" content="" />
+    <meta property="og:title" content="EduChamp : Education HTML Template"/>
+    <meta property="og:description" content="EduChamp : Education HTML Template"/>
+    <meta property="og:image" content=""/>
     <meta name="format-detection" content="telephone=no">
 
     <!-- FAVICONS ICON ============================================= -->
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png"/>
 
     <!-- PAGE TITLE HERE ============================================= -->
     <title>EduChamp : Education HTML Template </title>
 
     <!-- MOBILE SPECIFIC ============================================= -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
     <!--[if lt IE 9]>
     <script src="assets/js/html5shiv.min.js"></script>
@@ -46,6 +47,21 @@
     <!-- STYLESHEETS ============================================= -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link class="skin" rel="stylesheet" type="text/css" href="assets/css/color/color-1.css">
+    <style>
+        /* Media query for mobile viewport */
+        @media screen and (max-width: 400px) {
+            #paypal-button-container {
+                width: 100%;
+            }
+        }
+
+        /* Media query for desktop viewport */
+        @media screen and (min-width: 400px) {
+            #paypal-button-container {
+                width: 250px;
+            }
+        }
+    </style>
 
 </head>
 <body id="bg">
@@ -85,7 +101,9 @@
                         <a href="index.html"><img src="assets/images/logo.png" alt=""></a>
                     </div>
                     <!-- Mobile Nav Button ==== -->
-                    <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler collapsed menuicon justify-content-end" type="button"
+                            data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown"
+                            aria-expanded="false" aria-label="Toggle navigation">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -98,7 +116,10 @@
                                 <li><a href="javascript:;" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
                                 <li><a href="javascript:;" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
                                 <!-- Search Button ==== -->
-                                <li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
+                                <li class="search-btn">
+                                    <button id="quik-search-btn" type="button" class="btn-link"><i
+                                            class="fa fa-search"></i></button>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -154,7 +175,8 @@
                                     <li><a href="error-404.html">404 Page</a></li>
                                 </ul>
                             </li>
-                            <li class="add-mega-menu"><a href="javascript:;">Our Courses <i class="fa fa-chevron-down"></i></a>
+                            <li class="add-mega-menu"><a href="javascript:;">Our Courses <i
+                                        class="fa fa-chevron-down"></i></a>
                                 <ul class="sub-menu add-menu">
                                     <li class="add-menu-left">
                                         <h5 class="menu-adv-title">Our Courses</h5>
@@ -180,7 +202,8 @@
                                     <li><a href="blog-details.html">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-dashboard"><a href="javascript:;">Dashboard <i class="fa fa-chevron-down"></i></a>
+                            <li class="nav-dashboard"><a href="javascript:;">Dashboard <i
+                                        class="fa fa-chevron-down"></i></a>
                                 <ul class="sub-menu">
                                     <li><a href="admin/index.html">Dashboard</a></li>
                                     <li><a href="admin/add-listing.html">Add Listing</a></li>
@@ -223,14 +246,14 @@
         <div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner1.jpg);">
             <div class="container">
                 <div class="page-banner-entry">
-                    <h1 class="text-white">Classroom</h1>
+                    <h1 class="text-white">See Sample Video!</h1>
                 </div>
             </div>
         </div>
         <div class="breadcrumb-row">
             <div class="container">
                 <ul class="list-inline">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <li>Classroom</li>
                 </ul>
             </div>
@@ -239,29 +262,63 @@
         <!-- Page Content Box ==== -->
         <div class="content-block">
             <!-- Blog Grid ==== -->
-            <div class="section-area section-sp1">
-                <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="section-area section-sp1">
+                            <div class="container">
+                                @foreach ($videos as $video)
+                                    <video width="320" height="240" controls>
+                                        <source src="{{ Voyager::image( $video->file) }}" type="video/mp4">
+                                    </video>
+                                @endforeach
 
-                    @foreach ($videos as $video)
-                        <video style="width:80%" controls>
-                            <source src="{{ asset("storage/$video->path") }}" type="video/mp4">
+                            </div>
+                        </div>
 
-                        </video>
-                @endforeach
-{{--                    here is empty area--}}
-                    <!-- Pagination ==== -->
-{{--                    <div class="pagination-bx rounded-sm gray clearfix">--}}
-{{--                        <ul class="pagination">--}}
-{{--                            <li class="previous"><a href="#"><i class="ti-arrow-left"></i> Prev</a></li>--}}
-{{--                            <li class="active"><a href="#">1</a></li>--}}
-{{--                            <li><a href="#">2</a></li>--}}
-{{--                            <li><a href="#">3</a></li>--}}
-{{--                            <li class="next"><a href="#">Next <i class="ti-arrow-right"></i></a></li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-                    <!-- Pagination END ==== -->
+                    </div>
+                    <div class="col ">
+                        <div class="section-area section-sp1">
+                            <div class="container mt-5">
+                                <div id="paypal-button-container"></div>
+                                <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"
+                                        data-sdk-integration-source="button-factory"></script>
+                                <script>
+                                    paypal.Buttons({
+                                        style: {
+                                            shape: 'rect',
+                                            color: 'gold',
+                                            layout: 'vertical',
+                                            label: 'paypal',
+
+                                        },
+                                        createOrder: function (data, actions) {
+                                            return actions.order.create({
+                                                purchase_units: [{
+                                                    amount: {
+                                                        value: '{{$video->price}}'
+                                                    }
+                                                }]
+                                            });
+                                        },
+                                        onApprove: function (data, actions) {
+                                            return actions.order.capture().then(function (details) {
+
+                                                alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                                            });
+
+                                        }
+                                    }).render('#paypal-button-container');
+                                </script>
+
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
             <!-- Blog Grid END ==== -->
         </div>
         <!-- Page Content Box END ==== -->
@@ -295,14 +352,19 @@
                     <div class="col-lg-4 col-md-12 col-sm-12 footer-col-4">
                         <div class="widget">
                             <h5 class="footer-title">Sign Up For A Newsletter</h5>
-                            <p class="text-capitalize m-b20">Weekly Breaking news analysis and cutting edge advices on job searching.</p>
+                            <p class="text-capitalize m-b20">Weekly Breaking news analysis and cutting edge advices on
+                                job searching.</p>
                             <div class="subscribe-form m-b20">
-                                <form class="subscription-form" action="http://educhamp.themetrades.com/demo/assets/script/mailchamp.php" method="post">
+                                <form class="subscription-form"
+                                      action="http://educhamp.themetrades.com/demo/assets/script/mailchamp.php"
+                                      method="post">
                                     <div class="ajax-message"></div>
                                     <div class="input-group">
-                                        <input name="email" required="required"  class="form-control" placeholder="Your Email Address" type="email">
+                                        <input name="email" required="required" class="form-control"
+                                               placeholder="Your Email Address" type="email">
                                         <span class="input-group-btn">
-											<button name="submit" value="Submit" type="submit" class="btn"><i class="fa fa-arrow-right"></i></button>
+											<button name="submit" value="Submit" type="submit" class="btn"><i
+                                                    class="fa fa-arrow-right"></i></button>
 										</span>
                                     </div>
                                 </form>
@@ -326,7 +388,8 @@
                                 <div class="widget footer_widget">
                                     <h5 class="footer-title">Get In Touch</h5>
                                     <ul>
-                                        <li><a href="http://educhamp.themetrades.com/admin/index.html">Dashboard</a></li>
+                                        <li><a href="http://educhamp.themetrades.com/admin/index.html">Dashboard</a>
+                                        </li>
                                         <li><a href="blog-classic-grid.html">Blog</a></li>
                                         <li><a href="portfolio.html">Portfolio</a></li>
                                         <li><a href="event.html">Event</a></li>
@@ -350,14 +413,22 @@
                         <div class="widget widget_gallery gallery-grid-4">
                             <h5 class="footer-title">Our Gallery</h5>
                             <ul class="magnific-image">
-                                <li><a href="assets/images/gallery/pic1.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic1.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic2.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic2.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic3.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic3.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic4.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic4.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic5.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic5.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic6.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic6.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic7.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic7.jpg" alt=""></a></li>
-                                <li><a href="assets/images/gallery/pic8.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic8.jpg" alt=""></a></li>
+                                <li><a href="assets/images/gallery/pic1.jpg" class="magnific-anchor"><img
+                                            src="assets/images/gallery/pic1.jpg" alt=""></a></li>
+                                <li><a href="assets/images/gallery/pic2.jpg" class="magnific-anchor"><img
+                                            src="assets/images/gallery/pic2.jpg" alt=""></a></li>
+                                <li><a href="assets/images/gallery/pic3.jpg" class="magnific-anchor"><img
+                                            src="assets/images/gallery/pic3.jpg" alt=""></a></li>
+                                <li><a href="assets/images/gallery/pic4.jpg" class="magnific-anchor"><img
+                                            src="assets/images/gallery/pic4.jpg" alt=""></a></li>
+                                <li><a href="assets/images/gallery/pic5.jpg" class="magnific-anchor"><img
+                                            src="assets/images/gallery/pic5.jpg" alt=""></a></li>
+                                <li><a href="assets/images/gallery/pic6.jpg" class="magnific-anchor"><img
+                                            src="assets/images/gallery/pic6.jpg" alt=""></a></li>
+                                <li><a href="assets/images/gallery/pic7.jpg" class="magnific-anchor"><img
+                                            src="assets/images/gallery/pic7.jpg" alt=""></a></li>
+                                <li><a href="assets/images/gallery/pic8.jpg" class="magnific-anchor"><img
+                                            src="assets/images/gallery/pic8.jpg" alt=""></a></li>
                             </ul>
                         </div>
                     </div>
@@ -367,7 +438,9 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 text-center"><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 text-center"><a target="_blank"
+                                                                              href="https://www.templateshub.net">Templates
+                            Hub</a></div>
                 </div>
             </div>
         </div>

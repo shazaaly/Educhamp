@@ -1,4 +1,59 @@
-<header class="header rs-nav header-transparent">
+<html>
+<head>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+
+        <!-- META ============================================= -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="keywords" content=""/>
+        <meta name="author" content=""/>
+        <meta name="robots" content=""/>
+
+        <!-- DESCRIPTION -->
+        <meta name="description" content="EduChamp : Education HTML Template"/>
+
+        <!-- OG -->
+        <meta property="og:title" content="EduChamp : Education HTML Template"/>
+        <meta property="og:description" content="EduChamp : Education HTML Template"/>
+        <meta property="og:image" content=""/>
+        <meta name="format-detection" content="telephone=no">
+
+        <!-- FAVICONS ICON ============================================= -->
+        <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"/>
+        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png"/>
+
+        <!-- PAGE TITLE HERE ============================================= -->
+        <title>EduChamp : Education HTML Template </title>
+
+        <!-- MOBILE SPECIFIC ============================================= -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <!--[if lt IE 9]>
+        <script src="assets/js/html5shiv.min.js"></script>
+        <script src="assets/js/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- All PLUGINS CSS ============================================= -->
+        <link rel="stylesheet" type="text/css" href="assets/css/assets.css">
+
+        <!-- TYPOGRAPHY ============================================= -->
+        <link rel="stylesheet" type="text/css" href="assets/css/typography.css">
+
+        <!-- SHORTCODES ============================================= -->
+        <link rel="stylesheet" type="text/css" href="assets/css/shortcodes/shortcodes.css">
+
+        <!-- STYLESHEETS ============================================= -->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <link class="skin" rel="stylesheet" type="text/css" href="assets/css/color/color-1.css">
+
+        <script src='https://meet.jit.si/external_api.js'></script>
+    </head>
+<body>
+<header class="header rs-nav">
     <div class="top-bar">
         <div class="container">
             <div class="row d-flex justify-content-between">
@@ -17,7 +72,7 @@
                             </select>
                         </li>
                         <li><a href="login.html">Login</a></li>
-                        <li><a href="{{route('register')}}">Register</a></li>
+                        <li><a href="register.html">Register</a></li>
                     </ul>
                 </div>
             </div>
@@ -28,10 +83,12 @@
             <div class="container clearfix">
                 <!-- Header Logo ==== -->
                 <div class="menu-logo">
-                    <a href="index.blade.php"><img src="{{asset('assets/images/logo-white.png')}}" alt=""></a>
+                    <a href="index.html"><img src="assets/images/logo.png" alt=""></a>
                 </div>
                 <!-- Mobile Nav Button ==== -->
-                <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler collapsed menuicon justify-content-end" type="button"
+                        data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown"
+                        aria-expanded="false" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -44,7 +101,10 @@
                             <li><a href="javascript:;" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
                             <li><a href="javascript:;" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
                             <!-- Search Button ==== -->
-                            <li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
+                            <li class="search-btn">
+                                <button id="quik-search-btn" type="button" class="btn-link"><i
+                                        class="fa fa-search"></i></button>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -59,12 +119,12 @@
                 <!-- Navigation Menu ==== -->
                 <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
                     <div class="menu-logo">
-                        <a href="index.blade.php"><img src="{{asset('assets/images/logo.png')}}" alt=""></a>
+                        <a href="index.html"><img src="assets/images/logo.png" alt=""></a>
                     </div>
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="javascript:;">Home <i class="fa fa-chevron-down"></i></a>
                             <ul class="sub-menu">
-                                <li><a href="index.blade.php">Home 1</a></li>
+                                <li><a href="index.html">Home 1</a></li>
                                 <li><a href="index-2.html">Home 2</a></li>
                             </ul>
                         </li>
@@ -96,23 +156,25 @@
                                 </li>
                                 <li><a href="portfolio.html">Portfolio</a></li>
                                 <li><a href="profile.html">Profile</a></li>
-                                <li><a href="{{route('membership')}}">Membership</a></li>
+                                <li><a href="membership.html">Membership</a></li>
                                 <li><a href="error-404.html">404 Page</a></li>
                             </ul>
                         </li>
-                        <li class="add-mega-menu"><a href="javascript:;">Our Courses <i class="fa fa-chevron-down"></i></a>
+                        <li class="add-mega-menu"><a href="javascript:;">Our Courses <i
+                                    class="fa fa-chevron-down"></i></a>
                             <ul class="sub-menu add-menu">
                                 <li class="add-menu-left">
                                     <h5 class="menu-adv-title">Our Courses</h5>
                                     <ul>
-                                        <li><a href="{{route('courses')}}">Courses </a></li>
+                                        <li><a href="courses.html">Courses </a></li>
+                                        <li><a href="courses-details.html">Courses Details</a></li>
                                         <li><a href="profile.html">Instructor Profile</a></li>
                                         <li><a href="event.html">Upcoming Event</a></li>
-                                        <li><a href="{{route('membership')}}">Membership</a></li>
+                                        <li><a href="membership.html">Membership</a></li>
                                     </ul>
                                 </li>
                                 <li class="add-menu-right">
-                                    <img src="{{asset('assets/images/adv/adv.jpg')}}" alt=""/>
+                                    <img src="assets/images/adv/adv.jpg" alt=""/>
                                 </li>
                             </ul>
                         </li>
@@ -125,28 +187,29 @@
                                 <li><a href="blog-details.html">Blog Details</a></li>
                             </ul>
                         </li>
-                        <li class="nav-dashboard"><a href="javascript:;">Dashboard <i class="fa fa-chevron-down"></i></a>
+                        <li class="nav-dashboard"><a href="javascript:;">Dashboard <i
+                                    class="fa fa-chevron-down"></i></a>
                             <ul class="sub-menu">
-                                <li><a href="http://127.0.0.1:8000/admin/login">Dashboard</a></li>
-{{--                                <li><a href="admin/add-listing.html">Add Listing</a></li>--}}
-{{--                                <li><a href="admin/bookmark.html">Bookmark</a></li>--}}
-{{--                                <li><a href="admin/courses.html">Courses</a></li>--}}
-{{--                                <li><a href="admin/review.html">Review</a></li>--}}
-{{--                                <li><a href="admin/teacher-profile.html">Teacher Profile</a></li>--}}
-{{--                                <li><a href="admin/user-profile.html">User Profile</a></li>--}}
-{{--                                <li><a href="javascript:;">Calendar<i class="fa fa-angle-right"></i></a>--}}
+                                <li><a href="admin/index.html">Dashboard</a></li>
+                                <li><a href="admin/add-listing.html">Add Listing</a></li>
+                                <li><a href="admin/bookmark.html">Bookmark</a></li>
+                                <li><a href="admin/courses.html">Courses</a></li>
+                                <li><a href="admin/review.html">Review</a></li>
+                                <li><a href="admin/teacher-profile.html">Teacher Profile</a></li>
+                                <li><a href="admin/user-profile.html">User Profile</a></li>
+                                <li><a href="javascript:;">Calendar<i class="fa fa-angle-right"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="admin/basic-calendar.html">Basic Calendar</a></li>
                                         <li><a href="admin/list-view-calendar.html">List View Calendar</a></li>
                                     </ul>
                                 </li>
-{{--                                <li><a href="javascript:;">Mailbox<i class="fa fa-angle-right"></i></a>--}}
-{{--                                    <ul class="sub-menu">--}}
-{{--                                        <li><a href="admin/mailbox.html">Mailbox</a></li>--}}
-{{--                                        <li><a href="admin/mailbox-compose.html">Compose</a></li>--}}
-{{--                                        <li><a href="admin/mailbox-read.html">Mail Read</a></li>--}}
-{{--                                    </ul>--}}
-{{--                                </li>--}}
+                                <li><a href="javascript:;">Mailbox<i class="fa fa-angle-right"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="admin/mailbox.html">Mailbox</a></li>
+                                        <li><a href="admin/mailbox-compose.html">Compose</a></li>
+                                        <li><a href="admin/mailbox-read.html">Mail Read</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -161,3 +224,31 @@
         </div>
     </div>
 </header>
+<div class="container-fluid col-6 ml-lg-5">
+
+    <h1>Join Class!</h1>
+    <button id="start" type="button">Let's Go!</button>
+</div>
+
+<div id="jitsi-container">
+</div>
+
+<script>
+    var button = document.querySelector('#start');
+    var container = document.querySelector('#jitsi-container');
+    var api = null;
+
+    button.addEventListener('click', () => {
+        var domain = "meet.jit.si";
+        var options = {
+            "roomName": "foo-bar-c8cfdb0d-135a-4462-a05b-36575c3ef591",
+            "parentNode": container,
+            "width": 800,
+            "height": 600,
+        };
+        api = new JitsiMeetExternalAPI(domain, options);
+    });
+
+</script>
+</body>
+</html>
